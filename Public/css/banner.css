@@ -1,0 +1,73 @@
+/*banner样式*/
+html,body,ul,ol,li,p,h1,h2,h3,h4,h5,h6,form,label,dl,dt,dd,fieldset,img,hr{
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+header #banner{
+	position: relative;
+	margin:0px;
+	width: 100%;
+	overflow: hidden;
+}
+
+header #banner #picList{
+	width: 100%;
+	height: 600px;
+}
+
+header #banner #picList .img{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	display: block;
+	height: 600px;
+	min-width: 1360px;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+#picList .img1{
+	background-image: url("../image/banner/tree.jpg");
+}
+#picList .img2{
+	background-image: url("../image/banner/banner1.png");
+}
+#picList .img3{
+	background-image: url("../image/banner/esbanner.png");
+}
+#picList .img4{
+	background-image: url("../image/banner/live_common.jpg");
+}
+
+
+/*小圆点样式*/
+header #banner #buttons{
+	position: absolute;
+	bottom: 20px;
+	left: 50%;
+	margin-left: -100px;
+}
+
+header #banner #buttons span{
+	display: block;
+	width: 16px;
+	height: 16px;
+	border-radius: 50%;
+	z-index: 2;
+	margin: 0 15px;
+	border: 2px solid #fff;
+	text-align: center;
+	line-height: 20px;
+	float: left;
+	cursor: pointer;
+	background: rgba(161,157,157,0.4);
+}
+
+header #banner #buttons .span-on{
+	background-color: #02afe8;
+	/*color: #fff;*/
+}

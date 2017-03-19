@@ -6,7 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>欢迎！</title>
 </head>
-<link rel="stylesheet" type="text/css" href="/home/Public/css/bootstrap/3.3.6/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="/xingkong/Public/css/bootstrap/3.3.6/bootstrap.css">
 <style type="text/css">
 	/*清空样式*/
 	html,body{
@@ -80,6 +80,6 @@
 		</div>
 	</div>
 </body>
-<script type="text/javascript" src="/home/Public/js/jquery/2.0.0/jquery.min.js"></script>
-<script type="text/javascript" src="/home/Public/js/bootstrap/3.3.6/bootstrap.js"></script>
+<script type="text/javascript" src="/xingkong/Public/js/jquery/2.0.0/jquery.min.js"></script>
+<script type="text/javascript" src="/xingkong/Public/js/bootstrap/3.3.6/bootstrap.js"></script>
 </html>

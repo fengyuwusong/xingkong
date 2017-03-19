@@ -9,14 +9,16 @@
         后台页面
     </title>
 </head>
-<script src="/home/Public/js/jquery/2.0.0/jquery.min.js" type="text/javascript">
+<script src="/xingkong/Public/js/jquery/2.0.0/jquery.min.js" type="text/javascript">
 </script>
-<link href="/home/Public/css/bootstrap/3.3.6/bootstrap.css" rel="stylesheet" type="text/css"/>
-<script src="/home/Public/js/bootstrap/3.3.6/bootstrap.js" type="text/javascript">
+<link href="/xingkong/Public/css/bootstrap/3.3.6/bootstrap.css" rel="stylesheet" type="text/css"/>
+<script src="/xingkong/Public/js/bootstrap/3.3.6/bootstrap.js" type="text/javascript">
 </script>
 <style type="text/css">
     .jumbotron{
-		margin: 0;
+        height: 200px;
+        margin: 0;
+        padding: 0;
 	}
 		#wel{
 		margin-top: 15px;
@@ -34,15 +36,15 @@
     .navbar{
         margin-bottom: 0px;
     }
+        h2{
+        margin: 0;
+        line-height: 100px;
+    }
 </style>
 <body>
     <!-- 巨幕 -->
     <div class="jumbotron">
-        <h2 class="text-center text-muted">
-            后台管理
-        </h2>
-    </div>
-    <!-- 导航 -->
+        <!-- 导航 -->
     <nav class="navbar navbar-default" role="navigation">
     <div class="container-fluid">
     <div class="navbar-header">
@@ -52,7 +54,7 @@
         <ul class="nav navbar-nav">
             <li class="active">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                    banner
+                    banner管理
                     <b class="caret"></b>
                 </a>
                 <ul class="dropdown-menu">
@@ -61,8 +63,17 @@
                     <li><a href="<?php echo U('home/admin/banner_choose');?>">banner选择</a></li>
                 </ul>
             </li>
-            <li><a href="#">其他</a></li>
-            <li class="dropdown">
+                        <li>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    推文管理
+                    <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a href="<?php echo U('home/admin/article_view');?>">推文查看</a></li>
+                    <li><a href="<?php echo U('home/admin/article_choose');?>">推文选择</a></li>
+                </ul>
+            </li>
+            <li>
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                     其他
                     <b class="caret"></b>
@@ -89,6 +100,11 @@
             </div>
     </div>
 </nav>
+        <h2 class="text-center text-muted">
+            后台管理
+        </h2>
+    </div>
+
     <!-- 面包屑导航 -->
     <ol class="breadcrumb">
         <li>
@@ -108,7 +124,7 @@
         <div class="row">
             <div class="col-md-12 text-center"><h2>查看banner</h2></div>
         </div>
- <?php $__FOR_START_11770__=0;$__FOR_END_11770__=count($banners);for($i=$__FOR_START_11770__;$i < $__FOR_END_11770__;$i+=1){ if((($i)%3 == 0) AND ($i == 0) ): ?><div class="row">
+ <?php $__FOR_START_32765__=0;$__FOR_END_32765__=count($banners);for($i=$__FOR_START_32765__;$i < $__FOR_END_32765__;$i+=1){ if((($i)%3 == 0) AND ($i == 0) ): ?><div class="row">
 <?php if(($banners[$i] == $banner1) or ($banners[$i] == $banner2) or ($banners[$i] == $banner3) or($banners[$i] == $banner4)): ?><div class="col-md-4">
                         <img src="http://www.xingkong.us/home/Public/image/banner/<?php echo ($banners[$i]); ?>">
                         <h4 class="text-muted text-primary text-center"><?php echo ($banners[$i]); ?>(已选)</h4>

@@ -8,6 +8,7 @@ class AdminController extends Controller {
 			$this->error('请先登录!',U('login/index'));
 		}
 	}
+
     // banner查看
     public function banner_view(){
     	$banner=D('config');
@@ -20,10 +21,12 @@ class AdminController extends Controller {
     	$this->assign('banners',$arr);
     	$this->show();
     }
+
     //banner上传
     public function banner_upload(){
     	$this->show();
     }
+
     //banner选择
     public function banner_choose(){
     	$banner=D('config');
@@ -35,6 +38,11 @@ class AdminController extends Controller {
     	$arr=$this->get_banner();
     	$this->assign('banners',$arr);
     	$this->show();
+    }
+
+    //推文查看
+    public function article_view(){
+        $this->show();
     }
 
     public function banner_change(){

@@ -9,14 +9,16 @@
         后台页面
     </title>
 </head>
-<script src="/home/Public/js/jquery/2.0.0/jquery.min.js" type="text/javascript">
+<script src="/xingkong/Public/js/jquery/2.0.0/jquery.min.js" type="text/javascript">
 </script>
-<link href="/home/Public/css/bootstrap/3.3.6/bootstrap.css" rel="stylesheet" type="text/css"/>
-<script src="/home/Public/js/bootstrap/3.3.6/bootstrap.js" type="text/javascript">
+<link href="/xingkong/Public/css/bootstrap/3.3.6/bootstrap.css" rel="stylesheet" type="text/css"/>
+<script src="/xingkong/Public/js/bootstrap/3.3.6/bootstrap.js" type="text/javascript">
 </script>
 <style type="text/css">
     .jumbotron{
+        height: 200px;
         margin: 0;
+        padding: 0;
     }
     .nav .dropdown{
         margin-left: 50px;
@@ -34,16 +36,16 @@
         .navbar{
         margin-bottom: 0px;
     }
+    h2{
+        margin: 0;
+        line-height: 100px;
+    }
 </style>
 <body>
     <!-- 巨幕 -->
     <div class="jumbotron">
-        <h2 class="text-center text-muted">
-            后台管理
-        </h2>
-    </div>
-    <!-- 导航 -->
-     <nav class="navbar navbar-default" role="navigation">
+        <!-- 导航 -->
+    <nav class="navbar navbar-default" role="navigation">
     <div class="container-fluid">
     <div class="navbar-header">
         <a class="navbar-brand" href="#">后台</a>
@@ -52,7 +54,7 @@
         <ul class="nav navbar-nav">
             <li class="active">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                    banner
+                    banner管理
                     <b class="caret"></b>
                 </a>
                 <ul class="dropdown-menu">
@@ -61,8 +63,17 @@
                     <li><a href="<?php echo U('home/admin/banner_choose');?>">banner选择</a></li>
                 </ul>
             </li>
-            <li><a href="#">其他</a></li>
-            <li class="dropdown">
+                        <li>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    推文管理
+                    <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a href="<?php echo U('home/admin/article_view');?>">推文查看</a></li>
+                    <li><a href="<?php echo U('home/admin/article_choose');?>">推文选择</a></li>
+                </ul>
+            </li>
+            <li>
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                     其他
                     <b class="caret"></b>
@@ -82,13 +93,17 @@
     <div class="pull-right" id="wel">
             <span class="text-muted">
                 欢迎你，<?php echo (session('name')); ?>
-                <a class="btn btn-info btn-xs active" href="#" role="button">
+                <a class="btn btn-info btn-xs active" href="<?php echo U('home/login/checkout');?>" role="button">
                     退出
                 </a>
             </span>
             </div>
     </div>
 </nav>
+        <h2 class="text-center text-muted">
+            后台管理
+        </h2>
+    </div>
     <!-- 面包屑导航 -->
     <ol class="breadcrumb">
         <li>

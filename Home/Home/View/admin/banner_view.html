@@ -16,7 +16,9 @@
 </script>
 <style type="text/css">
     .jumbotron{
-		margin: 0;
+        height: 200px;
+        margin: 0;
+        padding: 0;
 	}
 		#wel{
 		margin-top: 15px;
@@ -34,15 +36,15 @@
     .navbar{
         margin-bottom: 0px;
     }
+        h2{
+        margin: 0;
+        line-height: 100px;
+    }
 </style>
 <body>
     <!-- 巨幕 -->
     <div class="jumbotron">
-        <h2 class="text-center text-muted">
-            后台管理
-        </h2>
-    </div>
-    <!-- 导航 -->
+        <!-- 导航 -->
     <nav class="navbar navbar-default" role="navigation">
     <div class="container-fluid">
     <div class="navbar-header">
@@ -52,7 +54,7 @@
         <ul class="nav navbar-nav">
             <li class="active">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                    banner
+                    banner管理
                     <b class="caret"></b>
                 </a>
                 <ul class="dropdown-menu">
@@ -61,8 +63,17 @@
                     <li><a href="{:U('home/admin/banner_choose')}">banner选择</a></li>
                 </ul>
             </li>
-            <li><a href="#">其他</a></li>
-            <li class="dropdown">
+                        <li>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    推文管理
+                    <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a href="{:U('home/admin/article_view')}">推文查看</a></li>
+                    <li><a href="{:U('home/admin/article_choose')}">推文选择</a></li>
+                </ul>
+            </li>
+            <li>
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                     其他
                     <b class="caret"></b>
@@ -89,11 +100,16 @@
             </div>
     </div>
 </nav>
+        <h2 class="text-center text-muted">
+            后台管理
+        </h2>
+    </div>
+
     <!-- 面包屑导航 -->
     <ol class="breadcrumb">
         <li>
             <a href="{:U('home/admin/banner_view')}">
-                banner
+                banner管理
             </a>
         </li>
         <li>

@@ -42,8 +42,6 @@ class AdminController extends Controller {
 
     //推文查看
     public function article_view(){
-        $page=I('get.page')? I('get.page'):1;
-        $this->assign('page',$page);
         $this->show();
     }
 

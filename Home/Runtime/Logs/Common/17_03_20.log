@@ -1,0 +1,32 @@
+[ 2017-03-20T21:40:57+08:00 ] 223.100.71.234 /home/templates/default/image/px.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载模块:Templates
+NOTIC: [8] Constant APP_DEBUG already defined D:\phpStudy\WWW\dx\home\index.php 第 18 行.
+NOTIC: [8] Constant APP_PATH already defined D:\phpStudy\WWW\dx\home\index.php 第 21 行.
+
+[ 2017-03-20T21:54:25+08:00 ] 42.229.32.152 /home/templates/default/image/px.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载模块:Templates
+NOTIC: [8] Constant APP_DEBUG already defined D:\phpStudy\WWW\dx\home\index.php 第 18 行.
+NOTIC: [8] Constant APP_PATH already defined D:\phpStudy\WWW\dx\home\index.php 第 21 行.
+
+[ 2017-03-20T22:25:21+08:00 ] 120.95.72.50 /home/templates/default/image/px.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载模块:Templates
+NOTIC: [8] Constant APP_DEBUG already defined D:\phpStudy\WWW\dx\home\index.php 第 18 行.
+NOTIC: [8] Constant APP_PATH already defined D:\phpStudy\WWW\dx\home\index.php 第 21 行.
+
+[ 2017-03-20T22:46:32+08:00 ] 59.45.87.33 /home/templates/default/image/px.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载模块:Templates
+NOTIC: [8] Constant APP_DEBUG already defined D:\phpStudy\WWW\dx\home\index.php 第 18 行.
+NOTIC: [8] Constant APP_PATH already defined D:\phpStudy\WWW\dx\home\index.php 第 21 行.
+

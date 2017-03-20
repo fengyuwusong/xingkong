@@ -11,7 +11,7 @@
 </head>
 <script src="/xingkong/Public/js/jquery/2.0.0/jquery.min.js" type="text/javascript">
 </script>
-<link rel="stylesheet" type="text/css" href="/xingkong/Public/css/bootstrap/3.3.6/bootstrap.css">
+<link href="/xingkong/Public/css/bootstrap/3.3.6/bootstrap.css" rel="stylesheet" type="text/css"/>
 <script src="/xingkong/Public/js/bootstrap/3.3.6/bootstrap.js" type="text/javascript">
 </script>
 <style type="text/css">
@@ -30,19 +30,13 @@
     .breadcrumb{
         padding-left: 70px;
     }
-    .name{
-        margin: 10px;
-    }
     button{
         margin-top: 20px;
     }
         .navbar{
         margin-bottom: 0px;
     }
-    .form-control{
-        margin-bottom: 13px;
-    }
-        h2{
+    h2{
         margin: 0;
         line-height: 100px;
     }
@@ -113,13 +107,13 @@
     <!-- 面包屑导航 -->
     <ol class="breadcrumb">
         <li>
-            <a href="#">
-                banner管理
+            <a href="<?php echo U('home/admin/banner_view');?>">
+                banner
             </a>
         </li>
         <li>
-            <a href="#">
-                选择banner
+            <a href="<?php echo U('home/admin/banner_view');?>">
+                上传banner
             </a>
         </li>
     </ol>
@@ -127,70 +121,24 @@
     <div class="container">
         <!-- 栅格化 -->
         <div class="row">
-            <div class="col-md-11 text-center">
+            <div class="col-md-12 text-center">
                 <h2>
-                    选择banner
+                    上传banner
                 </h2>
             </div>
         </div>
-        <form action="<?php echo U('home/admin/banner_change');?>" method="post">
         <div class="row">
-            <div class="col-md-3 text-center">
+            <div class="col-md-2 text-center">
                 <p>
-                    <h4>请选择banner1的图片名字：</h4>
+                    请选择上传的图片：
                 </p>
             </div>
-            <div class="col-md-8">
-                    <select class="form-control" name="banner1">
-                    <?php $__FOR_START_19336__=0;$__FOR_END_19336__=count($banners);for($i=$__FOR_START_19336__;$i < $__FOR_END_19336__;$i+=1){ if($banner1 == $banners[$i]): ?><option selected="selected"><?php echo ($banner1); ?></option>
-                        <?php else: ?>
-                        <option><?php echo ($banners[$i]); ?></option><?php endif; } ?>
-                    </select>
+            <div class="col-md-10">
+                <form class="text-center" action="<?php echo U('home/admin/upload');?>" method="post" enctype="multipart/form-data">
+                    <input class="form-control text-center" name="file" type="file"/>
+                    <button class="btn btn-success" type="submit" value="提交">提交</button>
+                </form>
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-3 text-center">
-                <p>
-                    <h4>请选择banner2的图片名字：</h4>
-                </p>
-            </div>
-            <div class="col-md-8">
-                    <select class="form-control" name="banner2">
-                    <?php $__FOR_START_6419__=0;$__FOR_END_6419__=count($banners);for($i=$__FOR_START_6419__;$i < $__FOR_END_6419__;$i+=1){ if($banner2 == $banners[$i]): ?><option selected="selected"><?php echo ($banner2); ?></option>
-                        <?php else: ?>
-                        <option><?php echo ($banners[$i]); ?></option><?php endif; } ?>
-                    </select>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-3 text-center">
-                <p>
-                    <h4>请选择banner3的图片名字：</h4>
-                </p>
-            </div>
-            <div class="col-md-8">
-                    <select class="form-control" name="banner3">
-                    <?php $__FOR_START_28253__=0;$__FOR_END_28253__=count($banners);for($i=$__FOR_START_28253__;$i < $__FOR_END_28253__;$i+=1){ if($banner3 == $banners[$i]): ?><option selected="selected"><?php echo ($banner3); ?></option>
-                        <?php else: ?>
-                        <option><?php echo ($banners[$i]); ?></option><?php endif; } ?>
-                    </select>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-3 text-center">
-                <p>
-                    <h4>请选择banner4的图片名字：</h4>
-                </p>
-            </div>
-            <div class="col-md-8" align="center">
-                    <select class="form-control" name="banner4">
-                    <?php $__FOR_START_10413__=0;$__FOR_END_10413__=count($banners);for($i=$__FOR_START_10413__;$i < $__FOR_END_10413__;$i+=1){ if($banner4 == $banners[$i]): ?><option selected="selected"><?php echo ($banner4); ?></option>
-                        <?php else: ?>
-                        <option><?php echo ($banners[$i]); ?></option><?php endif; } ?>
-                    </select>
-                    <input class="btn btn-success" type="submit" value="提交">
-            </div>
-        </div>
-        </form>
     </div>
 </body>

@@ -39,10 +39,7 @@
         .navbar{
         margin-bottom: 0px;
     }
-    .form-control{
-        margin-bottom: 13px;
-    }
-        h2{
+    h2{
         margin: 0;
         line-height: 100px;
     }
@@ -58,7 +55,7 @@
     </div>
     <div>
         <ul class="nav navbar-nav">
-            <li class="active">
+            <li>
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                     banner管理
                     <b class="caret"></b>
@@ -69,7 +66,7 @@
                     <li><a href="<?php echo U('home/admin/banner_choose');?>">banner选择</a></li>
                 </ul>
             </li>
-                        <li>
+            <li class="active">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                     推文管理
                     <b class="caret"></b>
@@ -110,16 +107,17 @@
             后台管理
         </h2>
     </div>
+
     <!-- 面包屑导航 -->
     <ol class="breadcrumb">
         <li>
             <a href="#">
-                banner管理
+                推文管理
             </a>
         </li>
         <li>
             <a href="#">
-                选择banner
+                推文查看
             </a>
         </li>
     </ol>
@@ -127,70 +125,8 @@
     <div class="container">
         <!-- 栅格化 -->
         <div class="row">
-            <div class="col-md-11 text-center">
-                <h2>
-                    选择banner
-                </h2>
-            </div>
+            <div class="col-md-12 text-center"><h2>查看推文</h2></div>
         </div>
-        <form action="<?php echo U('home/admin/banner_change');?>" method="post">
-        <div class="row">
-            <div class="col-md-3 text-center">
-                <p>
-                    <h4>请选择banner1的图片名字：</h4>
-                </p>
-            </div>
-            <div class="col-md-8">
-                    <select class="form-control" name="banner1">
-                    <?php $__FOR_START_19336__=0;$__FOR_END_19336__=count($banners);for($i=$__FOR_START_19336__;$i < $__FOR_END_19336__;$i+=1){ if($banner1 == $banners[$i]): ?><option selected="selected"><?php echo ($banner1); ?></option>
-                        <?php else: ?>
-                        <option><?php echo ($banners[$i]); ?></option><?php endif; } ?>
-                    </select>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-3 text-center">
-                <p>
-                    <h4>请选择banner2的图片名字：</h4>
-                </p>
-            </div>
-            <div class="col-md-8">
-                    <select class="form-control" name="banner2">
-                    <?php $__FOR_START_6419__=0;$__FOR_END_6419__=count($banners);for($i=$__FOR_START_6419__;$i < $__FOR_END_6419__;$i+=1){ if($banner2 == $banners[$i]): ?><option selected="selected"><?php echo ($banner2); ?></option>
-                        <?php else: ?>
-                        <option><?php echo ($banners[$i]); ?></option><?php endif; } ?>
-                    </select>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-3 text-center">
-                <p>
-                    <h4>请选择banner3的图片名字：</h4>
-                </p>
-            </div>
-            <div class="col-md-8">
-                    <select class="form-control" name="banner3">
-                    <?php $__FOR_START_28253__=0;$__FOR_END_28253__=count($banners);for($i=$__FOR_START_28253__;$i < $__FOR_END_28253__;$i+=1){ if($banner3 == $banners[$i]): ?><option selected="selected"><?php echo ($banner3); ?></option>
-                        <?php else: ?>
-                        <option><?php echo ($banners[$i]); ?></option><?php endif; } ?>
-                    </select>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-3 text-center">
-                <p>
-                    <h4>请选择banner4的图片名字：</h4>
-                </p>
-            </div>
-            <div class="col-md-8" align="center">
-                    <select class="form-control" name="banner4">
-                    <?php $__FOR_START_10413__=0;$__FOR_END_10413__=count($banners);for($i=$__FOR_START_10413__;$i < $__FOR_END_10413__;$i+=1){ if($banner4 == $banners[$i]): ?><option selected="selected"><?php echo ($banner4); ?></option>
-                        <?php else: ?>
-                        <option><?php echo ($banners[$i]); ?></option><?php endif; } ?>
-                    </select>
-                    <input class="btn btn-success" type="submit" value="提交">
-            </div>
-        </div>
-        </form>
+
     </div>
 </body>

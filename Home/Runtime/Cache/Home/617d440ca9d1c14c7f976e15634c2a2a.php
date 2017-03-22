@@ -124,7 +124,7 @@
         <div class="row">
             <div class="col-md-12 text-center"><h2>查看banner</h2></div>
         </div>
- <?php $__FOR_START_11391__=0;$__FOR_END_11391__=count($banners);for($i=$__FOR_START_11391__;$i < $__FOR_END_11391__;$i+=1){ if((($i)%3 == 0) AND ($i == 0) ): ?><div class="row">
+ <?php $__FOR_START_10285__=0;$__FOR_END_10285__=count($banners);for($i=$__FOR_START_10285__;$i < $__FOR_END_10285__;$i+=1){ if((($i)%3 == 0) AND ($i == 0) ): ?><div class="row">
 <?php if(($banners[$i] == $banner1) or ($banners[$i] == $banner2) or ($banners[$i] == $banner3) or($banners[$i] == $banner4)): ?><div class="col-md-4">
                         <img src="http://www.xingkong.us/home/Public/image/banner/<?php echo ($banners[$i]); ?>">
                         <h4 class="text-muted text-primary text-center"><?php echo ($banners[$i]); ?>(已选)</h4>

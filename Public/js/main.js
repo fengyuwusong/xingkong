@@ -67,6 +67,7 @@ function getActicle(){
         cache: false,
         dataType: 'json',
         success: function(data) {
+            console.log(data);
             weixinus(data);
         },
         error: function() {
@@ -82,6 +83,8 @@ function weixinus(data) {
 	var arcTitle=eval(data['article_title']);
 	 //定义数组存放日期和作者
 	var dateAndaut=eval(data['article_author']);
+	var arcImg=eval(data['article_img']);
+	// console.log(data['article_img']);
     //定义推文的数量
     var arcNum = 6;
     // 动态加载推文的内容
@@ -92,7 +95,8 @@ function weixinus(data) {
         $('#usword-content a').eq(i).attr('href', arcLink[i]);
         $('.arctical').eq(i).append('<div class="arcpic"></div><div class="arctitle"><h4></h4></div><div class="date"><p></p></div>');
         //设置图片背景
-        $('.arcpic').eq(i).css('background', 'url("public/image/arctitle/arc-' + (arcNum - i) + '.jpg")');
+        $('.arcpic').eq(i).css('background', 'url('+arcImg[i]+') no-repeat ');
+        $('.arcpic').eq(i).css('background-size', '100% 100%');
         //设置标题
         $('.arctitle h4').eq(i).text(arcTitle[i]);
         //设置日期和作者

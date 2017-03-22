@@ -17,7 +17,18 @@ class ConfigModel extends Model{
 	}
 	// 获取推文信息
 	public function getArticle(){
-		$article=$this->where('id=1')->field('article_url,article_author,article_title')->find();
+		$article=$this->where('id=1')->field('article_url,article_author,article_title,article_img')->find();
 		return $article;
 	}
+	// 只获取文章url
+	public function getArticleTitle(){
+		$article=$this->where('id=1')->field('article_title')->find();
+		return $article;
+	}
+
+//	保存新的展示文章
+//    data数组 {'article_title'=>[],'url'=>'','article_author'=>'','article_url'=>
+    public function changeArticle($data){
+//        $tit
+    }
 }

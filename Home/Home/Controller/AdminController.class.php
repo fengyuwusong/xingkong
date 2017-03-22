@@ -44,9 +44,26 @@ class AdminController extends Controller {
     public function article_view(){
         $page=I('get.page')? I('get.page'):1;
         $this->assign('page',$page);
+        $article=D('config');
+        $articlesTitle=$article->getArticleTitle();
+        $this->assign('articles_title',json_decode($articlesTitle['article_title']));
         $this->show();
     }
-
+    // 推文选择
+    public function article_choose(){
+        $article=D('config');
+        $articlesTitle=$article->getArticleTitle();
+        $this->assign('titles',json_decode($articlesTitle['article_title']));
+        $page=I('get.page')? I('get.page'):1;
+        $this->assign('page',$page);
+        $this->show();
+    }
+    public function test(){
+        $article=D('config');
+        $articlesTitle=$article->getArticleTitle();
+        $data=json_decode($articlesTitle['article_title']);
+        var_dump($data);
+    }
     public function banner_change(){
     	$banner1=I('post.banner1');
     	$banner2=I('post.banner2');

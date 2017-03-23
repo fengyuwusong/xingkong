@@ -38,10 +38,6 @@
         margin: 10px;
     }
 
-    button {
-        margin-top: 20px;
-    }
-
     .navbar {
         margin-bottom: 0px;
     }
@@ -132,17 +128,32 @@
     </li>
 </ol>
 <!-- 主区域 -->
-<div class="container">
+<div class="container" align="center">
+    
     <!-- 栅格化 -->
     <div class="row">
-        <div class="col-md-11 text-center">
+        <div class="col-md-12 text-center">
             <h2>
                 选择推文
             </h2>
         </div>
+        <div class="progress" style="width: 40%">
+            <p class="bg-info">正在加载,请稍等......如果页面不停的闪请自己按F5进行刷新</p>
+        </div>
+        <div class="progress" style="width: 40%">
+            <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="45" aria-valuemin="0"
+                 aria-valuemax="100" style="width: 100%">
+                <span class="sr-only">45% Complete</span>
+            </div>
+        </div>
     </div>
-    <form action="{:U('home/admin/banner_change')}" method="post">
-        <div class="row">
+    <div class="row form-select" text-align="center">
+        <div class="col-md-2" style="float: none;">
+            <input type="number" id="choose_page" class="form-control" min="1" placeholder="请选择文章所在页数">
+        </div>
+    </div>
+    <form action="{:U('home/admin/article_change')}" method="post">
+        <div class="row form-select">
             <div class="col-md-3 text-center">
                 <p>
                 <h4>请选择推文1：</h4>
@@ -150,11 +161,14 @@
             </div>
             <div class="col-md-8">
                 <select class="form-control" name="article1" id="select1">
-
                 </select>
+                <input type="hidden" id="title1" name="title1"/>
+                <input type="hidden" id="url1" name="url1"/>
+                <input type="hidden" id="img1" name="img1"/>
+                <input type="hidden" id="author1" name="author1"/>
             </div>
         </div>
-        <div class="row">
+        <div class="row form-select">
             <div class="col-md-3 text-center">
                 <p>
                 <h4>请选择推文2：</h4>
@@ -162,11 +176,14 @@
             </div>
             <div class="col-md-8">
                 <select class="form-control" name="article2" id="select2">
-
                 </select>
+                <input type="hidden" id="title2" name="title2"/>
+                <input type="hidden" id="url2" name="url2"/>
+                <input type="hidden" id="img2" name="img2"/>
+                <input type="hidden" id="author2" name="author2"/>
             </div>
         </div>
-        <div class="row">
+        <div class="row form-select">
             <div class="col-md-3 text-center">
                 <p>
                 <h4>请选择推文3：</h4>
@@ -174,11 +191,14 @@
             </div>
             <div class="col-md-8">
                 <select class="form-control" name="article3" id="select3">
-
                 </select>
+                <input type="hidden" id="title3" name="title3"/>
+                <input type="hidden" id="url3" name="url3"/>
+                <input type="hidden" id="img3" name="img3"/>
+                <input type="hidden" id="author3" name="author3"/>
             </div>
         </div>
-        <div class="row">
+        <div class="row form-select">
             <div class="col-md-3 text-center">
                 <p>
                 <h4>请选择推文4：</h4>
@@ -186,11 +206,14 @@
             </div>
             <div class="col-md-8" align="center">
                 <select class="form-control" name="article4" id="select4">
-
                 </select>
+                <input type="hidden" id="title4" name="title4"/>
+                <input type="hidden" id="url4" name="url4"/>
+                <input type="hidden" id="img4" name="img4"/>
+                <input type="hidden" id="author4" name="author4"/>
             </div>
         </div>
-        <div class="row">
+        <div class="row form-select">
             <div class="col-md-3 text-center">
                 <p>
                 <h4>请选择推文5：</h4>
@@ -198,19 +221,30 @@
             </div>
             <div class="col-md-8" align="center">
                 <select class="form-control" name="article5" id="select5">
-
                 </select>
+                <input type="hidden" id="title5" name="title5"/>
+                <input type="hidden" id="url5" name="url5"/>
+                <input type="hidden" id="img5" name="img5"/>
+                <input type="hidden" id="author5" name="author5"/>
             </div>
         </div>
-        <div class="row">
+        <div class="row form-select">
             <div class="col-md-3 text-center">
                 <p>
                 <h4>请选择推文6：</h4>
                 </p>
             </div>
-            <div class="col-md-8" align="center">
+            <div class="col-md-8">
                 <select class="form-control" name="article6" id="select6">
-
+                </select>
+                <input type="hidden" id="title6" value="1" name="title6"/>
+                <input type="hidden" id="url6" name="url6"/>
+                <input type="hidden" id="img6" name="img6"/>
+                <input type="hidden" id="author6" name="author6"/>
+            </div>
+        </div>
+        <div class="row form-select">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" align="center">
                 <input class="btn btn-success" type="submit" value="提交">
             </div>
         </div>
@@ -219,27 +253,58 @@
 </body>
 <script>
     //获取6个标题
-    var title=new Array("{$titles[0]}","{$titles[1]}","{$titles[2]}","{$titles[3]}","{$titles[4]}","{$titles[5]}");
+    var title = new Array("{$titles[0]}", "{$titles[1]}", "{$titles[2]}", "{$titles[3]}", "{$titles[4]}", "{$titles[5]}");
     var page = ({$page} - 1) * 13;
+    var now=-1;
+    var article;
     $(document).ready(function () {
+        $(".form-select").css('display','none');
         if (page != 0) {
             getActicle(page, 12);
         } else
             getActicle(page, 11);
+        //监听更换页码
+        $("#choose_page").on("blur",function (e) {
+            $(".progress").css('display','block');
+            $(".form-select").css('display','none');
+            if(e.target.value==null){
+                console.log(now);
+            }else{
+                now=(e.target.value-1)*13;
+            }
+
+            for (var i = 1; i <= 6; i++) {
+                $('#select' + i).html("");
+            }
+            getActicle(now, 12);
+        });
+
+        //监听更换文章 保存hidden值
+        for (var i = 1; i <= 6; i++) {
+            $('#select'+i).on("change",function (e) {
+//                console.log(e.target.value);
+                for(var j = 1; j <= Object.keys(article).length; j++){
+                    if((article[j]['title'])==e.target.value){
+                        $("#title"+i).val(article[j]['title']);
+                        $("#author"+i).val(article[j]['author']);
+                        $("#url"+i).val(article[j]['url']);
+                        $("#img"+i).val(article[j]['thumb_url']);
+                    }
+                }
+            })
+        }
+
     });
 
-//    排版
-    function edit(data){
-        var html="";
-        for(var i=1;i<=6;i++){
-            for(var j=1;j<=Object.keys(data).length;j++){
-                if(title[i-1]==data[j]['title']){
-                    $('#select'+i).append("<option selected='selected'>"+data[j]['title']+"</option>");
-
-                }else{
-                    $('#select'+i).append("<option>"+data[j]['title']+"</option>");
+    //    排版
+    function edit(data) {
+        var html = "";
+        for (var i = 1; i <= 6; i++) {
+            $('#select' + i).append("<option selected='selected'>" + title[i - 1] + "</option>");
+            for (var j = 1; j <= Object.keys(data).length; j++) {
+                if (title[i - 1] != data[j]['title']) {
+                    $('#select' + i).append("<option>" + data[j]['title'] + "</option>");
                 }
-
             }
         }
     }
@@ -262,9 +327,15 @@
             success: function (data) {
                 console.log(data);
                 edit(data);
+                article=data;
+                $(".form-select").css('display','block');
+                $(".progress").css('display','none');
             },
             error: function () {
-
+                console.log("失败了");
+                var container = $('.container');
+                container.append('<p class="bg-info">正在加载,请稍等......</p>');
+                location.reload();
             }
         });
     }

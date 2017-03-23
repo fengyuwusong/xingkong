@@ -185,6 +185,7 @@
 </ol>
 <!-- 主区域 -->
 <div class="container">
+        
     <!-- 栅格化 -->
 </div>
 </body>
@@ -192,10 +193,8 @@
     console.log("{$articles_title[0]}");
     var page = ({$page} - 1) * 13;
     $(document).ready(function () {
-        if (page != 0) {
+
             getActicle(page, 12);
-        } else
-            getActicle(page, 11);
     });
     //排版
     function edit(data) {
@@ -240,7 +239,8 @@
                 edit(data);
             },
             error: function () {
-
+                console.log("失败了");
+             location.reload();   
             }
         });
     }

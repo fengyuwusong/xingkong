@@ -108,7 +108,7 @@
     <ol class="breadcrumb">
         <li>
             <a href="<?php echo U('home/admin/banner_view');?>">
-                banner
+                banner管理
             </a>
         </li>
         <li>

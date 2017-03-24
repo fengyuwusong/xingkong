@@ -20,6 +20,7 @@ class ConfigModel extends Model{
 		$article=$this->where('id=1')->field('article_url,article_author,article_title,article_img')->find();
 		return $article;
 	}
+
 	// 只获取文章url
 	public function getArticleTitle(){
 		$article=$this->where('id=1')->field('article_title')->find();
@@ -27,8 +28,11 @@ class ConfigModel extends Model{
 	}
 
 //	保存新的展示文章
-//    data数组 {'article_title'=>[],'url'=>'','article_author'=>'','article_url'=>
-    public function changeArticle($data){
-//        $tit
+    public function changeArticle($title,$url,$author,$img){
+        $data['article_title']=$title;
+        $data['article_url']=$url;
+        $data['article_author']=$author;
+        $data['article_img']=$img;
+        $article=$this->where('id=1')->save($data);
     }
 }

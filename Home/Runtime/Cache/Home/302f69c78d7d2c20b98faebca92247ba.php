@@ -142,7 +142,7 @@
             </div>
             <div class="col-md-8">
                     <select class="form-control" name="banner1">
-                    <?php $__FOR_START_19336__=0;$__FOR_END_19336__=count($banners);for($i=$__FOR_START_19336__;$i < $__FOR_END_19336__;$i+=1){ if($banner1 == $banners[$i]): ?><option selected="selected"><?php echo ($banner1); ?></option>
+                    <?php $__FOR_START_7446__=0;$__FOR_END_7446__=count($banners);for($i=$__FOR_START_7446__;$i < $__FOR_END_7446__;$i+=1){ if($banner1 == $banners[$i]): ?><option selected="selected"><?php echo ($banner1); ?></option>
                         <?php else: ?>
                         <option><?php echo ($banners[$i]); ?></option><?php endif; } ?>
                     </select>
@@ -156,7 +156,7 @@
             </div>
             <div class="col-md-8">
                     <select class="form-control" name="banner2">
-                    <?php $__FOR_START_6419__=0;$__FOR_END_6419__=count($banners);for($i=$__FOR_START_6419__;$i < $__FOR_END_6419__;$i+=1){ if($banner2 == $banners[$i]): ?><option selected="selected"><?php echo ($banner2); ?></option>
+                    <?php $__FOR_START_27993__=0;$__FOR_END_27993__=count($banners);for($i=$__FOR_START_27993__;$i < $__FOR_END_27993__;$i+=1){ if($banner2 == $banners[$i]): ?><option selected="selected"><?php echo ($banner2); ?></option>
                         <?php else: ?>
                         <option><?php echo ($banners[$i]); ?></option><?php endif; } ?>
                     </select>
@@ -170,7 +170,7 @@
             </div>
             <div class="col-md-8">
                     <select class="form-control" name="banner3">
-                    <?php $__FOR_START_28253__=0;$__FOR_END_28253__=count($banners);for($i=$__FOR_START_28253__;$i < $__FOR_END_28253__;$i+=1){ if($banner3 == $banners[$i]): ?><option selected="selected"><?php echo ($banner3); ?></option>
+                    <?php $__FOR_START_28892__=0;$__FOR_END_28892__=count($banners);for($i=$__FOR_START_28892__;$i < $__FOR_END_28892__;$i+=1){ if($banner3 == $banners[$i]): ?><option selected="selected"><?php echo ($banner3); ?></option>
                         <?php else: ?>
                         <option><?php echo ($banners[$i]); ?></option><?php endif; } ?>
                     </select>
@@ -184,7 +184,7 @@
             </div>
             <div class="col-md-8" align="center">
                     <select class="form-control" name="banner4">
-                    <?php $__FOR_START_10413__=0;$__FOR_END_10413__=count($banners);for($i=$__FOR_START_10413__;$i < $__FOR_END_10413__;$i+=1){ if($banner4 == $banners[$i]): ?><option selected="selected"><?php echo ($banner4); ?></option>
+                    <?php $__FOR_START_5343__=0;$__FOR_END_5343__=count($banners);for($i=$__FOR_START_5343__;$i < $__FOR_END_5343__;$i+=1){ if($banner4 == $banners[$i]): ?><option selected="selected"><?php echo ($banner4); ?></option>
                         <?php else: ?>
                         <option><?php echo ($banners[$i]); ?></option><?php endif; } ?>
                     </select>

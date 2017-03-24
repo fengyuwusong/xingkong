@@ -62,8 +62,11 @@ class AdminController extends Controller
     public function article_choose()
     {
         $article = D('config');
-        $articlesTitle = $article->getArticleTitle();
+        $articlesTitle = $article->getArticle();
         $this->assign('titles', json_decode($articlesTitle['article_title']));
+        $this->assign('imgs', json_decode($articlesTitle['article_img']));
+        $this->assign('urls', json_decode($articlesTitle['article_url']));
+        $this->assign('authors', json_decode($articlesTitle['article_author']));
         $page = I('get.page') ? I('get.page') : 1;
         $this->assign('page', $page);
         $this->show();
@@ -84,7 +87,6 @@ class AdminController extends Controller
     //更改文章
     public function article_change()
     {
-        echo I("post.article1");
         $title = array(
             I("post.title1"),
             I("post.title2"),
@@ -110,18 +112,25 @@ class AdminController extends Controller
             I("post.img6")
         );
         $author = array(
-            I("post.date1")." ".I("post.author1"),
-            I("post.date2")." ".I("post.author2"),
-            I("post.date3")." ".I("post.author3"),
-            I("post.date4")." ".I("post.author4"),
-            I("post.date5")." ".I("post.author5"),
-            I("post.date6")." ".I("post.author6")
+            I("post.author1"),
+            I("post.author2"),
+            I("post.author3"),
+            I("post.author4"),
+            I("post.author5"),
+            I("post.author6")
         );
         $title=json_encode($title);
         $url=json_encode($url);
         $img=json_encode($img);
         $author=json_encode($author);
+        $article = D('config');
+//        echo "<pre>";
 //        var_dump($title);
+//        var_dump($url);
+//        var_dump($author);
+//        var_dump($img);
+        $article->changeArticle($title,$url,$author,$img);
+        $this->success('变换成功!', 'article_view');
     }
 
 

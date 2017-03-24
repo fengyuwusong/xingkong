@@ -20,6 +20,8 @@ class IndexController extends Controller {
     public function getArticle(){
         $article=D('config');
         $a=$article->getArticle();
+        //替换 &进数据库转义为&amp;
+        $a['article_img']=str_replace('&amp;','&',$a['article_img']);
         $this->ajaxReturn($a);
     }
 }

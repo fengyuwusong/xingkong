@@ -84,7 +84,6 @@ function weixinus(data) {
 	 //定义数组存放日期和作者
 	var dateAndaut=eval(data['article_author']);
 	var arcImg=eval(data['article_img']);
-	// console.log(data['article_img']);
     //定义推文的数量
     var arcNum = 6;
     // 动态加载推文的内容

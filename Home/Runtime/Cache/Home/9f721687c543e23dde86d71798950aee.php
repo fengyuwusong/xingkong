@@ -184,8 +184,17 @@
     </li>
 </ol>
 <!-- 主区域 -->
-<div class="container">
-        
+<div class="container" align="center">
+    <div class="progress" style="width: 40%">
+        <p class="bg-info">正在加载,请稍等......如果页面不停的闪请自己按F5进行刷新</p>
+    </div>
+    <div class="progress" style="width: 40%">
+        <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="45" aria-valuemin="0"
+             aria-valuemax="100" style="width: 100%">
+            <span class="sr-only">45% Complete</span>
+        </div>
+    </div>
+
     <!-- 栅格化 -->
 </div>
 </body>
@@ -193,7 +202,6 @@
     console.log("<?php echo ($articles_title[0]); ?>");
     var page = (<?php echo ($page); ?> - 1) * 13;
     $(document).ready(function () {
-
             getActicle(page, 12);
     });
     //排版
@@ -236,6 +244,7 @@
             jsonpCallback: "jsonpHandler",//为jsonp请求指定一个回调函数名。这个值将用来取代jQuery自动生成的随机函数名。这主要用来让jQuery生成度独特的函数名，这样管理请求更容易，也能方便地提供回调函数和错误处理。你也可以在想让浏览器缓存GET请求的时候，指定这个回调函数名。
             success: function (data) {
                 console.log(data);
+                $(".progress").css('display','none');
                 edit(data);
             },
             error: function () {
